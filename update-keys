@@ -5,7 +5,7 @@ export LANG=C
 TMPDIR=$(mktemp -d)
 trap "rm -rf '${TMPDIR}'" EXIT
 
-KEYSERVER='hkp://pool.sks-keyservers.net'
+KEYSERVER='hkp://p80.pool.sks-keyservers.net:80'
 GPG="gpg --quiet --batch --no-tty --no-permission-warning --keyserver "${KEYSERVER}" --homedir ${TMPDIR}"
 
 pushd "$(dirname "$0")" >/dev/null
