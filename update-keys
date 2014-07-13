@@ -65,7 +65,9 @@ while read -ra data; do
 		echo "key is still fully trusted: ${keyid} ${username}"
 	fi
 done < packager-revoked-keyids
+touch archlinux-revoked
 
+shopt -s nullglob
 cat master/*.asc packager/*.asc packager-revoked/*.asc > archlinux.gpg
 
 popd >/dev/null
